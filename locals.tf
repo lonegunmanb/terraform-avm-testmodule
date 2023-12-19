@@ -4,8 +4,6 @@ locals {
   role_definition_resource_substring = "/providers/Microsoft.Authorization/roleDefinitions"
 }
 
-# Private endpoint application security group associations
-# Remove if this resource does not support private endpoints
 locals {
   private_endpoint_application_security_group_associations = { for assoc in flatten([
     for pe_k, pe_v in var.private_endpoints : [
